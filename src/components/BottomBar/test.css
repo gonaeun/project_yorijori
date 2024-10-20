@@ -1,0 +1,49 @@
+/* bottom-nav 스타일 설정 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.bottom-nav {
+    width: 800px; /* 너비 */
+    height: 80px; /* 높이 */
+    background-color: rgba(0, 0, 0, 0.75); /* 배경색과 투명도 */
+    display: flex; /* Flexbox로 설정 */
+    justify-content: space-around; /* 가로로 균등하게 정렬 */
+    align-items: center; /* 세로로 가운데 정렬 */
+    position: fixed; /* 고정 위치 */
+    bottom: 0; /* 화면 하단에 고정 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙 정렬을 위한 이동 */
+}
+
+/* nav-item 스타일 설정 */
+.nav-item {
+    background: none; /* 배경 없음 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer; /* 마우스 포인터 모양 변경 */
+    display: flex; /* Flexbox로 설정 */
+    flex-direction: column; /* 수직 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 10px; /* 패딩 설정 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit; /* 링크 색상 상속 */
+}
+
+/* 이미지 스타일 설정 */
+.nav-item img {
+    width: 40px; /* 이미지 너비 */
+    height: 40px; /* 이미지 높이 */
+}
+
+/* 텍스트 스타일 설정 */
+.nav-item span {
+    margin-top: 5px; /* 텍스트 위쪽 여백 */
+    font-size: 12px; /* 글자 크기 */
+    color: #fff; /* 글자 색상 */
+    font-family: 'Pretendard-Regular';
+}

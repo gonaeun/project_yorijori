@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'BMJUA', sans-serif;
+  display: flex;
+  flex-direction: column; /* 수직 정렬을 위한 추가 */
+  align-items: center;
+  justify-content: flex-start; /* 위쪽 정렬 */
+  height: 100vh;
+  overflow-y: scroll; /* 상하 스크롤을 허용 */
+  overflow-x: hidden; /* 수평 스크롤바를 숨김 */
+  padding-top: 20px; /* body를 아래로 20px 내림 */
+}
+
+/* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  width: 0; /* 스크롤바의 너비를 0으로 설정 */
+  height: 0; /* 스크롤바의 높이를 0으로 설정 */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* 스크롤바 트랙을 투명하게 설정 */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent; /* 스크롤바 thumb를 투명하게 설정 */
+}
+
+.recipe-add-page {
+  position: relative;
+  width: 90%; /* 화면 너비의 90% */
+  max-width: 1200px; /* 최대 너비 */
+  margin: 20px auto; /* 상단바 위치 비우기 위해 margin 추가 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.recipe-title {
+  text-align: center;
+  font-family: 'BMJUA', sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: -0.05em;
+  color: #434343;
+  margin-bottom: 20px;
+}
+
+.first-line {
+  width: 100%;
+  height: 1px;
+  background-color: #FF8000;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title-input {
+  width: 90%;
+  max-width: 600px;
+  height: 32px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.05em;
+  color: #D6D6D6;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #434343;
+  outline: none;
+  text-align: center;
+}
+
+.second-line {
+  width: 100%;
+  height: 1px;
+  background-color: #434343;
+  margin-bottom: 20px;
+}
+
+.recipe-input {
+  width: 90%;
+  max-width: 600px;
+  min-height: 200px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  color: #D6D6D6;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #434343;
+  outline: none;
+  resize: vertical; /* 세로 크기 조절 가능 */
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none; /* 외곽선 제거 */
+}
+
+.cancel-btn-r, .submit-btn-r {
+  width: 200px;
+  height: 60px;
+  font-family: 'BMJUA', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 10; /* Ensures these buttons are on top of other elements */
+  margin: 10px;
+}
+
+.cancel-btn-r {
+  background-color: #D9D9D9;
+  color: #FF8000;
+}
+
+.submit-btn-r {
+  background-color: #FF8000;
+  color: #FFFFFF;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

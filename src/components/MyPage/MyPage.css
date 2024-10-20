@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'BM JUA_TTF', sans-serif;
+  overflow-x: hidden;
+}
+
+.mypage-container {
+  width: 800px;
+  margin: 100px auto 100px; /* 상단과 하단 바를 고려하여 마진 설정 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mypage-title {
+  text-align: center;
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 40px;
+  letter-spacing: -5%;
+  color: #434343;
+}
+
+.mypage-first-line, .mypage-second-line {
+  width: 100%;
+  height: 1px;
+  background-color: #FF8000;
+  margin: 10px 0;
+}
+
+.mypage-id-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding-top: 80px;
+}
+
+.mypage-picture-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  overflow: hidden; /* 이미지가 원형 영역을 넘지 않도록 함 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mypage-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 영역을 채우도록 설정 */
+}
+
+.mypage-id-info {
+  margin-left: 20px;
+}
+
+.mypage-id, .mypage-name, .mypage-nickname, .mypage-phone, .mypage-email {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: medium;
+  font-size: 28px;
+  letter-spacing: -5%;
+  color: #434343;
+  margin-top: 20px;
+}
+
+.mypage-input-prompt {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: light;
+  font-size: 18px;
+  letter-spacing: -5%;
+  color: #434343;
+  margin-top: 10px;
+}
+
+.mypage-input {
+  user-select: none;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin: 4px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mypage-input:read-only {
+  background-color: #e9ecef;
+}
+
+.mypage-input:not(:read-only) {
+  background-color: #fff;
+  border-color: #007bff;
+}
+
+.mypage-correction-btn, .mypage-submit-btn {
+  width: 300px;
+  height: 80px;
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 40px;
+  letter-spacing: -5%;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: 105px;
+}
+
+.mypage-correction-btn {
+  background-color: #D9D9D9;
+  color: #FF8000;
+}
+
+.mypage-submit-btn {
+  background-color: #FF8000;
+  color: #FFFFFF;
+}
+
+.mypage-delete-account-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 16px;
+  border: none;
+  background-color: #D9D9D9;
+  color: black;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.05em;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 40px;
+  user-select: none;
+}

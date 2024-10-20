@@ -1,0 +1,50 @@
+/* bottom-nav 스타일 설정 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bottom-nav {
+    width: 100%; /* 화면 너비에 맞추기 위해 width를 100%로 설정 */
+    max-width: 800px; /* 최대 너비 설정 */
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.75); /* 반투명 배경색 */
+    display: flex;
+    justify-content: space-around; /* 아이템을 균등하게 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    position: fixed; /* 화면 하단에 고정 */
+    bottom: 0; /* 화면 하단에 위치 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙 정렬을 위한 변환 */
+    z-index: 1000; /* 다른 요소들 위에 표시 */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* 하단 그림자 추가 */
+    padding: 0 10px; /* 좌우 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함한 박스 크기 계산 */
+  }
+
+.nav-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-item span {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #fff;
+    font-family: 'Pretendard-Regular';
+}

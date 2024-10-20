@@ -1,0 +1,95 @@
+/* index.css 또는 LoginPage의 스타일 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.screen {
+  margin-bottom: 20px;
+}
+
+/* 로고 */
+.logo-b {
+  width: 375px;
+  height: auto;
+  padding-top: 100px;
+}
+
+.group {
+  width: 100%;
+}
+
+
+
+/* 입력필드 */
+.input-field-l {
+  width: 100%;
+  padding: 10px 40px 10px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* 기본 테두리 제거 */
+}
+
+.input-field-l:focus {
+  border: 2px solid transparent; /* 포커스 시 테두리 제거 */
+  outline: none; /* 포커스 시 브라우저 기본 테두리 제거 */
+}
+
+
+/* 아이디 저장, 아이디 찾기 비밀번호 찾기 */
+/* 아이디 저장, 아이디 찾기 비밀번호 찾기 */
+.options {
+display: flex;
+justify-content: space-between; /* 요소들을 좌우 끝으로 배치 */
+align-items: center;
+width: 100%; /* 부모 요소의 전체 너비를 차지하도록 설정 */
+padding-bottom: 20px;
+}
+
+.options .remember {
+display: flex;
+align-items: center;
+}
+
+.options .links {
+display: flex;
+align-items: center;
+margin-left: auto; /* 링크 그룹을 오른쪽 끝으로 이동 */
+}
+
+.options .link {
+color: #6c757d;
+text-decoration: none;
+margin: 0 5px; /* 링크 사이의 여백을 설정 */
+}
+
+.options .divider {
+margin: 0 5px; /* 구분자 사이의 여백을 설정 */
+}
+
+
+/* 입력칸 주황테두리 css */
+.view-l, .view-2-l {
+  background-color: #ffffff;
+  border: 4px solid #ff8000;
+  border-radius: 20px;
+  height: 60px; /* 고정 높이 */
+  width: 70vw; /* 뷰포트 너비의 80% */
+  max-width: 550px; /* 최대 너비 */
+  display: flex;
+  align-items: center;
+  padding: 0 15px; /* 좌우 패딩 */
+  box-sizing: border-box;
+  margin-bottom: 15px; /* 각 요소 사이의 간격 */
+  font-family: 'Pretendard-Regular';
+}
+
+.loginuser, .lock {
+  width: 50px; /* 너비를 100px로 설정 */
+  height: auto; /* 높이는 자동으로 설정 */
+  padding-left: 20px;
+}

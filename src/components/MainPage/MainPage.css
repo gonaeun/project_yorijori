@@ -1,0 +1,666 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.TopBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.BottomBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+body {
+  overflow-y: scroll; /* 상하 스크롤을 허용 */
+  overflow-x: hidden; /* 수평 스크롤바를 숨김 */
+  font-family: 'BM JUA_TTF', sans-serif;
+  background-color: #fbfbfb;
+}
+
+/* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  width: 0; /* 스크롤바의 너비를 0으로 설정 */
+  height: 0; /* 스크롤바의 높이를 0으로 설정 */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* 스크롤바 트랙을 투명하게 설정 */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent; /* 스크롤바 thumb를 투명하게 설정 */
+}
+
+.main-page {
+  position: relative; /* 중앙 정렬을 위해 상대 위치로 설정 */
+  width: 800px;
+  min-height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;
+  margin: 0 auto; /* 가운데 정렬 */
+  padding-top: 80px; /* 상단 바 높이만큼 패딩 추가 */
+}
+
+.recipe-text {
+  position: absolute;
+  top: 156px;
+  align-items: center;
+  font-size: 40px;
+  color: #434343;
+  letter-spacing: -0.05em;
+  font-family: 'BM JUA_TTF', sans-serif;
+  z-index: 2;
+  user-select: none;
+}
+
+.back-arrow {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 40px; /* 화살표 크기 조정 */
+  z-index: 8; /* Ensure it is above other content */
+  color: #434343; /* 화살표 색상 */
+  position: absolute; /* 위치를 명확히 하기 위해 절대 위치 사용 */
+  top: -16px; /* 상단 위치 조정 */
+  left: 180px; /* 왼쪽 위치 조정 */
+  padding: 10px; /* 클릭 영역을 키우기 위해 패딩 추가 */
+  font-family: 'Pretendard', sans-serif;
+  z-index: 15;
+}
+
+.visual-backarrow {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 40px; /* 화살표 크기 조정 */
+  z-index: 8; /* Ensure it is above other content */
+  color: #434343; /* 화살표 색상 */
+  position: absolute; /* 위치를 명확히 하기 위해 절대 위치 사용 */
+  top: -16px; /* 상단 위치 조정 */
+  left: 180px; /* 왼쪽 위치 조정 */
+  padding: 10px; /* 클릭 영역을 키우기 위해 패딩 추가 */
+  font-family: 'Pretendard', sans-serif;
+  z-index: 26;
+}
+
+.select-btn-container {
+  position: absolute;
+  top: 211px;
+  width: 520px;
+  height: 200px;
+  z-index: 2;
+}
+
+.left-container {
+  width: 200px; /* 초기 너비 */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s ease; /* 너비 애니메이션 */
+}
+
+.left-container.expand {
+  width: 520px; /* 확장 후 너비 */
+}
+
+.searching-input {
+  width: 200px; /* 초기 너비 */
+  height: 80px;
+  border-radius: 40px;
+  border: 4px solid #434343;
+  transition: width 1.5s ease, border 0.5s ease; /* 너비와 테두리 애니메이션 */
+}
+
+.searching-input.expand-width {
+  width: 520px; /* 확장 후 너비 */
+  border: 4px solid #FF8000;
+}
+
+.searching-input input {
+  height: 100px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0;
+  box-shadow: none;
+  outline: none;
+  font-size: 36px;
+}
+
+.searching-input-text {
+  position: absolute;
+  bottom: -20px;
+  left: -160px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: -0.1em;
+  color: #434343;
+  font-family: 'Pretendard', sans-serif;
+  user-select: none;
+}
+
+.search-tags-container {
+  position: absolute;
+  top: 140px;
+  width: 520px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.search-tag {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: -0.1em;
+  color: #434343;
+  display: flex;
+  font-family: 'Pretendard', sans-serif;
+  margin-right: 10px; /* 모든 태그의 오른쪽에 일정 간격 추가 */
+}
+
+.remove-tag {
+  margin-left: 5px; /* 삭제 버튼과 태그 텍스트 간의 간격 조정 */
+  cursor: pointer;
+}
+
+.right-container {
+  width: 200px; /* 초기 너비 */
+  height: 200px;
+  left: 488px;
+  top: 212px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s ease; /* 너비 애니메이션 */
+  z-index: 4;
+}
+
+.searching-plate {
+  width: 135px;
+  height: 135px;
+  top: 0px;
+  left: 100px;
+  border-radius: 50%;
+  border: 3px solid #434343;
+}
+
+.searching-plate-text {
+  position: absolute;
+  bottom: -20px;
+  left: -26px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: -0.1em;
+  color: #434343;
+  font-family: 'Pretendard', sans-serif;
+  user-select: none;
+}
+
+.tiktok {
+  position: absolute;
+  width: 2px;
+  top: 260px;
+  height: 100px;
+  background-color: #434343;
+  z-index: 5;
+}
+
+.food-pic {
+  position: absolute;
+  top: 250px;
+  left: 400px;
+  width: 800px;
+  height: 410px;
+  background-color: #EFEFEF;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.recom-container {
+  position: absolute;
+  top: 474px;
+  left: 50%;
+  width: 500px;
+  height: 100px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.recom-btn-container {
+  position: absolute;
+  top: 400px;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  height: 200px;
+  padding: 20px;
+  z-index: 4;
+}
+
+.search-result-box {
+  width: 270px; /* 너비 */
+  height: 270px; /* 높이 */
+  background-color: #434343; /* 배경 색상 */
+  border-radius: 50px; /* 모서리 반경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF; /* 텍스트 색상 */
+  font-family: 'BM JUA_TTF', sans-serif; /* 폰트 */
+  font-size: 24px; /* 폰트 크기 */
+  letter-spacing: -0.05em; /* 문자 간격 조정 */
+  text-align: center; /* 텍스트 정렬 */
+}
+
+.search-result-text {
+  position: absolute;
+  top: 80px;
+  left: 138px;
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 36px;
+  letter-spacing: -0.1em;
+  user-select: none;
+}
+
+.cancel-btn {
+  position: absolute;
+  top: 82px;
+  left: 470px;
+  width: 110px;
+  height: 30px;
+  border-radius: 50px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #D6D6D6;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+
+.start-btn {
+  position: absolute;
+  border-radius: 50px;
+  top: 82px;
+  left: 600px;
+  width: 60px;
+  height: 30px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #FF8000;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+
+.vs-recom-btn-container {
+  position: absolute;
+  top: 400px;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  height: 200px;
+  padding: 20px;
+  z-index: 4;
+}
+
+.vs-cancel-btn, .vs-start-btn {
+  position: absolute;
+  border-radius: 50px;
+  font-family: 'Pretendard', sans-serif;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+
+.vs-cancel-btn {
+  top: 82px;
+  left: 470px;
+  width: 110px;
+  height: 30px;
+  background-color: #D6D6D6;
+}
+
+.vs-start-btn {
+  top: 82px;
+  left: 600px;
+  width: 60px;
+  height: 30px;
+  background-color: #FF8000;
+}
+
+.search-result-text {
+  position: absolute;
+  top: 80px;
+  left: 138px;
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 36px;
+  letter-spacing: -0.1em;
+  user-select: none;
+}
+
+/* Add a dropdown button */
+.ingre-list {
+  position: absolute;
+  top: 82px;
+  left: 138px;
+  width: 110px;
+  height: 30px;
+  background-color: #FF8000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.recom-text {
+  font-size: 36px;
+  color: #434343;
+  letter-spacing: -0.05em;
+  font-family: 'BM JUA_TTF', sans-serif;
+  text-align: left;
+}
+
+.recom-subtext {
+  font-size: 16px;
+  color: #434343;
+  letter-spacing: -0.05em;
+  text-align: left;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.food-result-top-container,
+.food-result-bottom-container {
+  position: absolute;
+  width: 900px;
+  height: 270px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.food-result-top-container {
+  top: 604px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.food-result-bottom-container {
+  top: 914px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fr {
+  width: 270px;
+  height: 270px;
+  border-radius: 50px;
+  background-color: #EFEFEF;
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+.food-result-top-container .fr:last-child,
+.food-result-bottom-container .fr:last-child {
+  margin-right: 0;
+}
+
+.search-results-container {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-auto-rows: 270px; /* Fixed height for each row */
+  gap: 40px; /* 40px gap between columns and rows */
+  top: 610px;
+  left: 118px;
+  width: 580px; /* Adjust width as needed */
+  /* Height is not set; container will grow based on its content */
+  background-color: transparent;
+  border: none;
+  z-index: 3;
+}
+
+.result-square {
+  flex: 1; /* Allow squares to take up available space evenly */
+  width: 270px;
+  height: 270px;
+  background-color: #D6D6D6;
+  border-radius: 50px;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.result-square:hover {
+  background: linear-gradient(to top, 
+    rgba(255, 128, 0, 1) 0%, 
+    rgba(255, 128, 0, 0.6) 15%, 
+    rgba(255, 128, 0, 0) 30%);
+  transition: background 1s ease-in-out;
+  z-index: 3;
+}
+
+.result-square-text {
+  position: absolute;
+  bottom: 10px;
+  width: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 28px;
+  letter-spacing: -0.05em;
+  color: #000000;
+  user-select: none;
+  text-align: center;
+  z-index: 3;
+}
+
+.result-square-idx {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 40px;
+  letter-spacing: -0.05em;
+  color: #FFFFFF;
+  user-select: none;
+  text-align: center;
+  z-index: 3;
+}
+
+.hidden {
+  display: none;
+}
+
+.item-list-container {
+  position: absolute;
+  top: 560px;
+  left: 50px;
+  width: 700px;
+  height: 450px;
+  display: flex; /* 수정됨: 가로 스크롤을 위해 flex 사용 */
+  overflow-x: auto; /* 수정됨: 가로 스크롤 허용 */
+  gap: 50px; /* 수정됨: 항목 간의 간격 조정 */
+  padding: 20px;
+  box-sizing: border-box;
+  white-space: nowrap; /* 요소들이 한 줄로 이어지도록 설정 */
+}
+
+.item-box {
+  width: 200px;
+  height: 200px;
+  background-color: #FF8000;
+  border-radius: 50px;
+  display: flex;
+  transition: transform 0.2s;
+  color: #fff;
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-size: 32px;
+  letter-spacing: -5%;
+  text-align: left; /* Align text to the left */
+  position: relative; /* Allows positioning of child elements */
+  cursor: grab;
+}
+
+.item-text {
+  position: absolute; /* Position text absolutely within the item-box */
+  top: 150px; /* Move text down by 50px */
+  left: 80px; /* Move text right by 20px */
+  transform: translate(-50%, -50%); /* Center text horizontally and vertically */
+  text-align: center;
+  display: block;
+  color: #000;
+}
+
+.visual-text-container {
+  position: absolute;
+  left: 138px;
+  top: 230px;
+  width: 290px;
+  height: 140px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px; /* Adjust spacing between items if needed */
+  max-width: 100%; /* Prevent overflowing */
+  max-height: 100%; /* Adjust based on your layout */
+  overflow: auto; /* Scroll if necessary */
+  padding: 10px; /* Adjust padding if needed */
+  z-index: 15;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.visual-text {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.dropped-item {
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  color: #434343;
+  margin-bottom: 10px; /* Space between items */
+  position: relative; /* Positioning of the remove button */
+  padding-right: 30px; /* Extra space for the remove button */
+}
+
+.remove-dropped-item {
+  position: absolute;
+  right: 0; /* Align button to the right of the item */
+  top: 50%; /* Vertically center the button */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  cursor: pointer;
+  font-size: 20px; /* Size of the "×" button */
+  color: #FF8000; /* Color of the "×" button */
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  display: none; /* Hide element completely after fading out */
+}
+
+/* Fade in effect */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.item-list-container,
+.vs-results-container {
+  transition: opacity 0.5s;
+}
+
+.visual-text-container.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.vs-results-container.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.vs-results-container {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-auto-rows: 270px; /* Fixed height for each row */
+  gap: 40px; /* 40px gap between columns and rows */
+  top: 610px;
+  left: 118px;
+  width: 580px; /* Adjust width as needed */
+  /* Height is not set; container will grow based on its content */
+  background-color: transparent;
+  border: none;
+  z-index: 3;
+  padding-bottom: 100px;
+}
+
+.vs-results-row {
+  height: 270px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.vs-search-result-box {
+  border-radius: 50px;
+  flex: 1; /* Allow squares to take up available space evenly */
+  width: 270px;
+  height: 270px;
+  background-color: #D6D6D6;
+  border-radius: 50px;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.vs-search-result-box:hover {
+  background: linear-gradient(to top, 
+    rgba(255, 128, 0, 1) 0%, 
+    rgba(255, 128, 0, 0.6) 15%, 
+    rgba(255, 128, 0, 0) 30%);
+  transition: background 1s ease-in-out;
+  z-index: 3;
+}
+
+.vs-search-result-text {
+  position: absolute;
+  bottom: 10px;
+  width: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'BM JUA_TTF', sans-serif;
+  font-weight: regular;
+  font-size: 28px;
+  letter-spacing: -0.05em;
+  color: #000000;
+  user-select: none;
+  text-align: center;
+  z-index: 3;
+}

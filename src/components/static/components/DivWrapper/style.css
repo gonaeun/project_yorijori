@@ -1,0 +1,30 @@
+.div-wrapper {
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #ff8000;
+  border-radius: 30px;
+  height: 60px;
+  position: relative;
+  width: 550px;
+}
+
+.div-wrapper .text-wrapper {
+  color: #00000059;
+  font-family: "Pretendard-Regular", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 49px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 10px;
+  white-space: nowrap;
+}
+
+.div-wrapper .xnix-line-star-10 {
+  height: 24px !important;
+  left: 12px !important;
+  position: absolute !important;
+  top: 11px !important;
+  width: 24px !important;
+}
