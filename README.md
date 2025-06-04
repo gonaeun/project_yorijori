@@ -1,4 +1,4 @@
-# :pushpin: normALearn
+# 🧑🏻‍🍳 project yorijori
 ![image](https://github.com/user-attachments/assets/4dcfb83a-b752-4f90-aad0-d1f35e7bc448)
 > 식재료 기반 음식 검색 및 사용자 취향 추천 서비스
 
